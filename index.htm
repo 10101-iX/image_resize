@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="#00A8A9">
+    <title>KB</title>
+    
+    
+    <link rel="canonical" href="index.htm">
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='all'>
+    
+    <!-- <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-134358512-2');</script>
+    <script async="" src="pagead/js/f.txt"></script>-->
+   </head>
+
+<body id="body">
+    <!--<div  class="topnav" id="myTopnav"> <a href="index.htm" class="logo"> <img style="vertical-align:middle;padding:8px;"
+                src="images/resize.svg" width="40" height="40"> <span
+                style="color: #00CEF5;font-size: 14px;font-weight: 600;">imageResize.me</span> </a>
+        <div class="navItems"> <a href="index-1.htm">Document Photo Scanner</a><a href="index-2.htm">Image Resize</a> <a
+                href="index-1.htm">Photo to Pencil Sketch</a>
+            <div class="dropdown"> <button class="dropbtn">About <i class="fa fa-caret-down"></i> </button>
+                <div class="dropdown-content"> <a href="/contact">Contact</a> <a href="policy/index.htm">Privacy
+                        policy</a> <a href="terms/index.htm">Terms of Service</a></div>
+            </div> <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </div> -->
+    <script>function myFunction() { var x = document.getElementById("myTopnav"); if (x.className === "topnav") { x.className += " responsive"; } else { x.className = "topnav"; } }</script>
+    <div class="wrapper">
+     <!--   <header class="header">
+            <div <script async="" src="pagead/js/f.txt"></script> <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9671704689988579"
+                data-ad-slot="6710311332"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </header> -->
+        <article class="content">
+            <div id="titles">
+               <!--   <h1>Online Image/Photo/Signature Resize and Crop</h1>
+            </div> 
+            <p>Tips: Press shift while resize to maintain aspect ratio</p> -->
+            <div> <input type="file" class="btn js-loadfile" value="Upload" autocomplete="off" title="Open image file"
+                    accept="image/*">
+                <div class="selectBox"> Size: <select id="sizeOptions" autocomplete="off"
+                        title="Select standard photo size">
+                        <option value="0" data-width="300" data-height="300">Custom Size</option>
+                        <optgroup label="Photo Size (W x H)">
+                            <option value="300x300" data-width="300" data-height="300">5.08x5.08 cm (300px x 300px)
+                            </option>
+                            <option value="225x225" data-width="225" data-height="225">3.81x3.81 cm (225px x 225px)
+                            </option>
+                            <option value="207x266" data-width="207" data-height="266">3.5x4.5 cm (207px x 266px)
+                            </option>
+                            <option value="207x207" data-width="207" data-height="207">3.5x3.5 cm (207px x 207px)
+                            </option>
+                            <option value="177x236" data-width="177" data-height="236">3x4 cm (177px x 236px)</option>
+                            <option value="295x414" data-width="295" data-height="414">5x7 cm (295px x 414px)</option>
+                            <option value="195x283" data-width="195" data-height="283">3.3x4.8 cm (195px x 283px)
+                            </option>
+                            <option value="200x230" data-width="200" data-height="230">200px x 230px</option>
+                            <option value="150x200" data-width="150" data-height="200">150px x 200px</option>
+                            <option value="138x177" data-width="138" data-height="177">138px x 177px</option>
+                        </optgroup>
+                        <optgroup label="Signature (W x H)">
+                            <option value="140x60" data-width="140" data-height="60">2.4 x 1 cm (140px x 60px)</option>
+                            <option value="207x88" data-width="207" data-height="88">3.5 x 1.5 cm (207px x 88px)
+                            </option>
+                            <option value="302x132" data-width="302" data-height="132">5 x 2.25 cm (302px x 132px)
+                            </option>
+                            <option value="350x175" data-width="350" data-height="175">6 x 3 cm (350px x 175px)</option>
+                            <option value="150x100" data-width="150" data-height="100">100px x 150px</option>
+                        </optgroup>
+                    </select></div><br>
+                <div class="selectBox"> Width:&nbsp;<input type="number" id="width" min="1" max="1000"
+                        value="300">&nbsp;px</div>
+                <div class="selectBox"> Height:&nbsp;<input type="number" id="height" min="1" max="1000"
+                        value="300">&nbsp;px</div> <button class="btn"
+                    onclick="superScan()" title="Removes dark backgrund from signature photo">Signature Scan</button> <button class="btn js-crop">Crop</button> 
+                <button class="btn js-reset" title="Reset image">Reset</button><br>
+                <div class="selectBox">Download: <select id="fileSize"
+                        title="Select photo download size, only for jpg download">
+                        <option id="c1">100kB</option>
+                        <option id="c2">50kB</option>
+                        <option id="c3">25kB</option>
+                        <option id="c4">15kB</option>
+                    </select> <button onclick="downloadJPG()">JPG</button> <button onclick="downloadPNG()">PNG</button>
+                </div>
+                <div class="crop-wrapper">
+                    <div class="top-overlay"></div>
+                    <div class="bottom-overlay"></div>
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay"></div>
+                    <div class="overlay">
+                        <div class="overlay-inner"></div>
+                    </div> <img class="resize-image" src="img/image.jpg" alt="image for resizing">
+                </div>
+            </div> <br>
+         <!--     <h2>How to use photo resize and crop tool?</h2><br>
+            <ul>
+                <li>Step 1: Open photo file by clicking on Browse button.</li>
+                <li>Step 2: Select standard photo or signature size.</li>
+                <li>Step 3: Darg photo and resize photo in crop box.</li>
+                <li>Step 4: To maintain aspect ratio while resize press and hold shift key.</li>
+                <li>Step 5: Once photo is adjusted in crop box, click on crop button. To reset croped photo click on
+                    reset.</li>
+                <li>Step 6: For signature to remove dark background click on Signature Scan.</li>
+                <li>Step 7: Select download file size, these file sizes are based on quality of download photo in JPG
+                    format only.</li>
+                <li>Step 8: Download your resized and croped photo.</li>
+                <li>Step 9: Select standard photo or signature size.</li>
+            </ul> <br>
+            <h2>How to calculate image size cm to pixels?</h2><br>
+            <p>Its simple math, Normally most images have 150DPI (dots per inch) and 59 Pixels per centimeters. <br><br>
+                <b>Example : 3.5cm (width)x 4.5cm(height) to pixels</b><br> Width in Pixel = 3.5 cm x 59 px = 207px<br>
+                Height in Pixel = 4.5 cm x 59 px = 266px</p>
+            <h2>Photo cm to pixel calulator</h2> -->
+           
+           <!--
+           
+            <table class="cmtopix">
+                <tr>
+                    <td>Width:</td>
+                    <td><input type="number" id="w" value="3.5"> 	&nbsp; cm </td>
+                    
+                </tr>
+                <tr>
+                    <td>Height:</td>
+                    <td><input type="number" id="h" value="4.5"> 	&nbsp; cm </td>
+                    
+                </tr>
+                <tr>
+                    <td>Resolution:</td>
+                    <td><input type="number" id="r" value="150"> 	&nbsp; dpi </td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2"><button>Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Width:</td>
+                    <td><span id="wr"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 207</span> &nbsp;	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pixel </td>
+                    
+                </tr>
+                <tr>
+                    <td>Height:</td>
+                    <td><span id="hr">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 266</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	&nbsp; pixel </td>
+                    
+                </tr>
+            </table> <br>-->
+
+
+            
+        <!--      <h2>How do I resize an image to 100kb?</h2><br>
+            <ul>
+                <li>Step 1: Upload a high resolution photo.</li>
+                <li>Step 2: Select required final size.</li>
+                <li>Step 3: Adjust photo in crop box.</li>
+                <li>Step 4: Click on crop.</li>
+                <li><img src="images/photo-size-in-kb-adjust.png"></li>
+                <li>Step 5: Select download file size and click on jpg.</li>
+            </ul> <br>
+            <h2>How can I resize my photo?</h2><br>
+            <ul>
+                <li>Step 1: Upload photo</li>
+                <li>Step 2: Select standard or coustom size</li>
+                <li>Step 3: Check and adjust required height, width</li>
+                <li>Step 4: Adjust photo in preview crop box</li>
+                <li>Step 5: Click crop and select required file size, type and download</li>
+            </ul><br>
+            <h2>How can I remove dark backgound from signature?</h2><br> <img src="images/signature-photo-resize.jpeg">
+            <img src="images/signature-photo-croped.jpg">
+            <ul>
+                <li>Step 1: Upload signature photo</li>
+                <li>Step 2: Select standard or coustom size</li>
+                <li>Step 3: Check and adjust required height, width</li>
+                <li>Step 4: Adjust signature photo in preview crop box</li>
+                <li>Step 5: Click crop and Click Signature Scan button</li>
+                <li>Step 6: Select required file size, type and download</li>
+            </ul><br>
+            <h2>Standard passport,PAN card and visa photo sizes and Requirements</h2><br>
+            <p> <b>Indian Passport Photo</b><br> Size of photo: 2 x 2 inch, 35 x 45 mm or 35 x 35 mm (5 x 5 cm, 3.5 x
+                4.5 cm, 3.5 x 3.5 cm).<br> Color of background: white or off-white.<br> The model has to look towards
+                the camera. Tilted head is not allowed.<br> Profile or three quarter photo is not allowed.<br><br>
+                <b>Indian OCI (Overseas Citizenship of India).</b><br> Size of photo: 35x35 mm. (3.5 x 3.5 cm)<br> <img
+                    src="images/Indian-OCI-photo-sizes.png"> Two ID photos must be enclosed for OCI application.<br>
+                Color of background: white is not allowed, usually light blue is used.<br><br> <b>Indian Visa
+                    Photo</b><br>Size of photo: 3.5 x 4.5 cm.<br> Color of background: white or light coloured.<br><br>
+                <b>Indian PAN Card Photo</b><br> Size of photo: 2.5 x 3.5 cm.<br><br> <img
+                    src="images/PAN-card-photo-sizes.png"></p>
+            <h2>GATE Photo Size, Dimension, Format and Other Details</h2> 
+        </article>
+        <aside class="sidebar">
+            <script async="" src="pagead/js/f.txt"></script> <ins class="adsbygoogle"
+                style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9671704689988579"
+                data-ad-slot="3519211217"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            <script async="" src="pagead/js/f.txt"></script> <ins class="adsbygoogle"
+                style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9671704689988579"
+                data-ad-slot="8655029965"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </aside>
+        <footer class="footer">
+            <div> <img style='vertical-align:middle;padding: 8px;' src='images/resize.svg' width='40' height='40'> <span
+                    style="color: #00CEF5;font-size: 14px;font-weight: 600;">imageResize.me</span></div>
+            <div> <b>Tools</b> <br> <a href='index-1.htm'>Document Photo Scanner</a> <a href='index.htm'>Image
+                    Resize</a> <a href='/photo-to-pencil-sketch'>Photo to Pencil Sketch</a></div>
+            <div> <b>About</b> <br> <a href='/contact'>Contact</a> <a href='policy/index.htm'>Privacy policy</a> <a
+                    href='terms/index.htm'>Terms of Service</a></div>
+        </footer>
+    </div>-->
+   <!--   <ul class="socialmanoj">
+        <li> <a href="login.php.xhtml?u=https%3A%2F%2Fimageresize.me" target="_blank"> <svg width="15" height="15"
+                    viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"
+                        fill="#fff"></path>
+                </svg><span>Facebook</span> </a></li>
+        <li> <a href="intent/tweet.html?text=Online%20photo%20editing,%20image%20to%20scanned%20pdf%20converter?&amp;url=https%3A%2F%2Fimageresize.me&amp;via=manoj"
+                target="_blank"> <svg width="15" height="15" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"
+                        fill="#fff"></path>
+                </svg><span>Twitter</span> </a></li>
+        <li> <a href="ServiceLogin.html?url=https%3A%2F%2Fimageresize.me" target="_blank"> <svg width="15" height="15"
+                    viewbox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"
+                        fill="#fff"></path>
+                </svg><span>Google+</span> </a></li>
+        <li> <a href="login.html?mini=true&amp;url=https%3A%2F%2Fimageresize.me&amp;title=Online%20photo%20editing,%20image%20to%20scanned%20pdf%20converter?"
+                target="_blank"> <svg width="15" height="15" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"
+                        fill="#fff"></path>
+                </svg><span>LinkedIn</span> </a></li>
+        <li> <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fimageresize.me&media=&description=Online%20photo%20editing,%20image%20to%20scanned%20pdf%20converter?"
+                target="_blank"> <svg width="15" height="15" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M256 597q0-108 37.5-203.5t103.5-166.5 152-123 185-78 202-26q158 0 294 66.5t221 193.5 85 287q0 96-19 188t-60 177-100 149.5-145 103-189 38.5q-68 0-135-32t-96-88q-10 39-28 112.5t-23.5 95-20.5 71-26 71-32 62.5-46 77.5-62 86.5l-14 5-9-10q-15-157-15-188 0-92 21.5-206.5t66.5-287.5 52-203q-32-65-32-169 0-83 52-156t132-73q61 0 95 40.5t34 102.5q0 66-44 191t-44 187q0 63 45 104.5t109 41.5q55 0 102-25t78.5-68 56-95 38-110.5 20-111 6.5-99.5q0-173-109.5-269.5t-285.5-96.5q-200 0-334 129.5t-134 328.5q0 44 12.5 85t27 65 27 45.5 12.5 30.5q0 28-15 73t-37 45q-2 0-17-3-51-15-90.5-56t-61-94.5-32.5-108-11-106.5z"
+                        fill="#fff"></path>
+                </svg><span>Pin It</span> </a></li>
+    </ul> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/resize.js"></script> 
+</body>
+
+</html>
